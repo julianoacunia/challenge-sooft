@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
-import { Transfer } from '../../core/domain/transfers.entity';
-import { TransfersRepository } from '../../core/ports/transfers.repository';
+import { Transfer } from '@core/domain/transfers.entity';
+import { TransfersRepository } from '@core/ports/transfers.repository';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Company } from '../../core/domain/company.entity';
+import { Company } from '@core/domain/company.entity';
 
 @Injectable()
 export class TransfersMongoRepository implements TransfersRepository {

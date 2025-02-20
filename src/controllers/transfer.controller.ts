@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
-import { FindCompanieWithTransfers } from '../core/application/findCompanieWithTransfers.service';
-import { Company } from '../core/domain/company.entity';
+import { FindCompanieWithTransfers } from '@core/application/findCompanieWithTransfers.service';
+import { Company } from '@core/domain/company.entity';
 
 @Controller('transfers')
 export class TransfersController {

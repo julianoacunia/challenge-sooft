@@ -1,4 +1,4 @@
-import { Company } from '../domain/company.entity';
+import { Company } from '@core/domain/company.entity';
 
 export abstract class CompanyRepository {
   abstract findCompaniesAdheredLastMonth(): Promise<Company[]>;

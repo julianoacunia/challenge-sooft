@@ -7,7 +7,7 @@ export class Transfer {
   id: ObjectId;
 
   @Column()
-  idEmpresa: string;
+  idEmpresa: ObjectId;
 
   @Column()
   importe: number;

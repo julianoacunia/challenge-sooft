@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { TransfersRepository } from '../ports/transfers.repository';
-import { Company } from '../domain/company.entity';
+import { TransfersRepository } from '@core/ports/transfers.repository';
+import { Company } from '@core/domain/company.entity';
 
 @Injectable()
 export class FindCompanieWithTransfers {

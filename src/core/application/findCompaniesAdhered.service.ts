@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CompanyRepository } from '../ports/company.repository';
-import { Company } from '../domain/company.entity';
+import { CompanyRepository } from '@core/ports/company.repository';
+import { Company } from '@core/domain/company.entity';
 
 @Injectable()
 export class FindCompaniesAdhered {

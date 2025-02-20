@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
-import { FindCompaniesAdhered } from '../core/application/findCompaniesAdhered.service';
-import { AdheredCompany } from '../core/application/adheredCompany.service';
-import { Company } from '../core/domain/company.entity';
+import { FindCompaniesAdhered } from '@core/application/findCompaniesAdhered.service';
+import { AdheredCompany } from '@core/application/adheredCompany.service';
+import { Company } from '@core/domain/company.entity';
 
 @Controller('companies')
 export class CompanyController {
