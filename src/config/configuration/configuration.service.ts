@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class ConfigurationService {
-  constructor(private configService: ConfigService){}
+  constructor(readonly configService: ConfigService){}
 
   get(propertyPath: string) {
     return this.configService.get(propertyPath);
