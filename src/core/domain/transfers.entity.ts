@@ -1,6 +1,6 @@
 import { Entity, ObjectIdColumn, Column } from 'typeorm';
 import { ObjectId } from 'mongodb';
-import { IsString, IsNumber } from "class-validator";
+import { IsString, IsNumber, IsDate } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger";
 
 @Entity('transfer')
@@ -12,8 +12,8 @@ export class Transfer {
     example: ''
   })
   id: ObjectId;
-  @IsString()
 
+  @ObjectIdColumn()
   @Column()
   @ApiProperty({
     description: 'Company Id',
@@ -21,8 +21,8 @@ export class Transfer {
     example: ''
   })
   idEmpresa: ObjectId;
-  @IsString()
 
+  @IsNumber()
   @Column()
   @ApiProperty({
     description: 'Import',
@@ -30,8 +30,8 @@ export class Transfer {
     example: ''
   })
   importe: number;
-  @IsNumber()
 
+  @IsString()
   @Column()
   @ApiProperty({
     description: 'Debit Account',
@@ -39,8 +39,8 @@ export class Transfer {
     example: ''
   })
   cuentaDebito: string;
+  
   @IsString()
-
   @Column()
   @ApiProperty({
     description: 'Credit Account',
@@ -48,8 +48,8 @@ export class Transfer {
     example: ''
   })
   cuentaCredito: string;
-  @IsString()
 
+  @IsDate()
   @Column()
   @ApiProperty({
     description: 'Date',
@@ -57,5 +57,4 @@ export class Transfer {
     example: ''
   })
   fecha: Date;
-  // @IsDate()
 }

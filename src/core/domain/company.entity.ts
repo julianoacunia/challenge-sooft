@@ -1,6 +1,6 @@
 import { Entity, ObjectIdColumn, Column } from 'typeorm';
 import { ObjectId } from 'mongodb';
-import { IsString } from "class-validator";
+import { IsString, IsDate } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger";
 
 @Entity('company')
@@ -12,8 +12,8 @@ export class Company {
     example: '67b646af37d3980c51bb885a'
   })
   id: ObjectId;
-  @IsString()
 
+  @IsString()
   @Column()
   @ApiProperty({
     description: 'Cuit',
@@ -21,8 +21,8 @@ export class Company {
     example: '0-12345678-9'
   })
   cuit: string;
-  @IsString()
 
+  @IsString()
   @Column()
   @ApiProperty({
     description: 'Razon Social',
@@ -30,8 +30,8 @@ export class Company {
     example: 'Empresa Ejemplo 1 S.A.'
   })
   razonSocial: string;
-  @IsString()
 
+  @IsDate()
   @Column()
   @ApiProperty({
     description: 'Fecha',

@@ -1,25 +1,22 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
-import * as request from 'supertest';
-import { App } from 'supertest/types';
-import { AppModule } from './../src/app.module';
+import { AppModule } from '../src/app.module';
+import { ConfigurationModule } from '@config/config.module';
 
-describe('AppController (e2e)', () => {
-  let app: INestApplication<App>;
+describe('AppModule', () => {
+  let module: TestingModule;
 
   beforeEach(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
+    module = await Test.createTestingModule({
       imports: [AppModule],
     }).compile();
-
-    app = moduleFixture.createNestApplication();
-    await app.init();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+  it('should be defined', () => {
+    expect(module).toBeDefined();
+  });
+
+  it('should import ConfigurationModule', () => {
+    const configurationModule = module.get<ConfigurationModule>(ConfigurationModule);
+    expect(configurationModule).toBeDefined();
   });
 });
